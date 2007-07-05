@@ -1,5 +1,7 @@
+require File.dirname(__FILE__) + '/spec_helper.rb'
 
-describe "the PyUnitParser" do
+
+describe PyUnitParser do
   it "should be able to count successes and failures in some examples" do
     examples = [["...................
     ----------------------------------------------------------------------
