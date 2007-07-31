@@ -50,7 +50,7 @@ NAME = "test-parser"
 REV = nil 
 # UNCOMMENT IF REQUIRED: 
 # REV = `svn info`.each {|line| if line =~ /^Revision:/ then k,v = line.split(': '); break v.chomp; else next; end} rescue nil
-VERS = TestParser::VERSION::STRING + (REV ? ".#{REV}" : "")
+VERS = TestParser::VERSION.to_s + (REV ? ".#{REV}" : "")
 CLEAN.include ['**/.*.sw?', '*.gem', '.config', '**/.DS_Store']
 RDOC_OPTS = ['--quiet', '--title', 'test-parser documentation',
     "--opname", "index.html",
@@ -136,3 +136,10 @@ end
 desc "Default task is to run specs"
 task :default => :spec
 
+desc "Uninstall the current version of the library"
+task :uninstall do
+  sh "yes | gem uninstall #{RUBYFORGE_PROJECT}"
+end
+
+desc "Uninstall the current version and deploy locally again"
+task :reinstall => [:uninstall, :local_deploy]

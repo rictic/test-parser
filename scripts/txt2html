@@ -6,7 +6,7 @@ require 'syntax/convertors/html'
 require 'erb'
 require File.dirname(__FILE__) + '/../lib/test-parser/version.rb'
 
-version  = Test-parser::VERSION::STRING
+version  = TestParser::VERSION.to_s
 download = 'http://rubyforge.org/projects/test-parser'
 
 class Fixnum
