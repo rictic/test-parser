@@ -12,8 +12,8 @@ module TestParser
       end
 
       #look for errors
-      "  ../../test-parser//pkg/test-parser-0.5.0/setup.rb:440: undefined method `set' for class `ConfigTable::ExecItem' (NameError)"
-      "/opt/[.......]/rake.rb:2028:in `const_missing': uninitialized constant TestRunner (NameError)"
+      #  ../../test-parser//pkg/test-parser-0.5.0/setup.rb:440: undefined method `set' for class `ConfigTable::ExecItem' (NameError)
+      #/opt/[.......]/rake.rb:2028:in `const_missing': uninitialized constant TestRunner (NameError)
       error_regex1 = /\s*(.*?)\:(\d+)\:(in `(.*?)':)? (.*?) \((.*?)\)/
       test_results.scan(error_regex1) do |(file,line,_,method,message,type)|
         error_info = {:file => file,
@@ -24,10 +24,10 @@ module TestParser
         test_info[:failures] << error_info
       end
 
-      "1)
-      NameError in 'the PyUnitParser should be able to count successes and failures in some examples'
-      undefined local variable or method `results' for PyUnitParser:Module
-      ./spec/../lib/test-parser/parsers/pyunit.rb:8:in `parse'"
+      #1)
+      #NameError in 'the PyUnitParser should be able to count successes and failures in some examples'
+      #undefined local variable or method `results' for PyUnitParser:Module
+      #./spec/../lib/test-parser/parsers/pyunit.rb:8:in `parse'
       error_regex2 = /\s+(.*?) in '(.*?)'\s+(.*?)\s+(.*?):(\d+):(in `(.*?)')?/
       test_results.scan(error_regex2) do |(type,test,message,file,line,_,method)|
         error_info = {:error_type => type,
@@ -41,11 +41,11 @@ module TestParser
       end
 
       #look for failures
-      "1)
-      'RSpecParser should agree with the listed examples' FAILED
-      expected 1, got 2 (using ==)
-      ./spec/test_rspec_parser_spec.rb:15:
-      "
+      #1)
+      #'RSpecParser should agree with the listed examples' FAILED
+      #expected 1, got 2 (using ==)
+      #./spec/test_rspec_parser_spec.rb:15:
+      #
       failure_regex = /\d+\)\s+'(.*?)' FAILED\s+(.*?)\n\s*(.*?):(\d+):/
       test_results.scan(failure_regex) do |(test,message,file,line)|
         test_info[:failures] << {:test => test,

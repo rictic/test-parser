@@ -1,4 +1,3 @@
-#rename this danged file to test_parsers_spec.rb when I'm on the 'net and svn won't whine
 require File.dirname(__FILE__) + '/spec_helper.rb'
 
 def have_key? ex, keys
@@ -6,6 +5,13 @@ def have_key? ex, keys
   ex.any? {|(_,c,_)| 
     keys.all? {|key| c[key]}
   }
+end
+
+def hash_match ex, key
+  ex.each do |test_results, correct_info, parsed_info|
+    next if !correct_info[key] # don't test things that aren't in the data file
+    parsed_info[key].should == correct_info[key]
+  end
 end
 
 
@@ -30,12 +36,15 @@ TestParser.parsers.each_value do |parser|
       end
     end
     
+    #if there are any examples at all, they should...
     if !examples.empty?
       it "should give accurate failure_counts" do
         hash_match examples, :failure_count
       end
     end
     
+    #if any of the examples include info on any of these properties, ensure that the
+    #parser aligns with that property
     [:success_count, :test_count].each do |property|
       if have_key? examples, property
         it "should give accurate #{property}s" do
@@ -44,16 +53,25 @@ TestParser.parsers.each_value do |parser|
       end
     end
     
-    
+    #if any of the examples include detailed info on failures...
     if have_key? examples, :failures
+
       it "should give details on failures" do
         examples.each do |test_results, correct_info, parsed_info|
+
           next if !correct_info[:failures]
+
           correct_info[:failures].each do |correct_hash|
+
+            #find the relevent failure in the parsed_info by the filename/line number this may not work for some systems...
+            
             parsed_hash = parsed_info[:failures].find {|p_h| p_h[:file] == correct_hash[:file] && p_h[:line] == correct_hash[:line] }
+
             if !parsed_hash
               fail "didn't find the error in '#{correct_hash[:file]}' line #{correct_hash[:line]}"
             else
+              #anything in the correct_info needs to match what was parsed
+              #this enables the parsed data to include more info than we're testing for
               correct_hash.each do |(key,val)|
                 parsed_hash[key].should == val
               end
@@ -62,6 +80,7 @@ TestParser.parsers.each_value do |parser|
         end
       end
       
+      #the number of detailed failure accounts should match the number of reported failures
       it "should give the same number of failure details as there were failures" do
         examples.each do |test_results, correct_info, parsed_info|
           parsed_info[:failures].length.should == parsed_info[:failure_count]          
@@ -77,13 +96,6 @@ TestParser.parsers.each_value do |parser|
         end
       end
     end
-
-
-    def hash_match ex, key
-      ex.each do |test_results, correct_info, parsed_info|
-        next if !correct_info[key] # don't test things that aren't in the data file
-        parsed_info[key].should == correct_info[key]
-      end
-    end
+    
   end
 end
