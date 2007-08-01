@@ -1,5 +1,6 @@
 require 'test-parser/version'
 require 'rake'
+require File.dirname(__FILE__) + '/test-parser/parsers/base.rb'
 FileList[File.dirname(__FILE__) + '/test-parser/parsers/*.rb'].each {|parser| require parser}
 
 module TestParser
