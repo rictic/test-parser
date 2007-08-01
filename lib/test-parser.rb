@@ -7,6 +7,7 @@ module TestParser
     {:rspec => TestParser::RSpec,
      :pyunit => TestParser::PyUnit,
      :junit4 => TestParser::JUnit4,
-     :rbunit => TestParser::RbUnit}
+     :rbunit => TestParser::RbUnit,
+     :quickCheck => TestParser::QuickCheck}
   end
 end

@@ -1,0 +1,40 @@
+[
+[
+'    ___         ___ _
+  / _ \ /\  /\/ __(_)
+ / /_\// /_/ / /  | |      GHC Interactive, version 6.5.20060608, for Haskell 98.
+/ /_\\\\/ __  / /___| |      http://www.haskell.org/ghc/
+\____/\/ /_/\____/|_|      Type :? for help.
+
+Loading package base-1.0 ... linking ... done.
+Prelude> [1 of 2] Compiling QuickCheck       ( QuickCheck.hs, interpreted )
+[2 of 2] Compiling Main             ( primes.hs, interpreted )
+Ok, modules loaded: QuickCheck, Main.
+*Main> Loading package haskell98-1.0 ... linking ... done.
+OK, passed 100 tests.
+*Main> Leaving GHCi.
+',
+ {:failure_count => 0, :success_count => 1, :test_count => 1}
+],
+[
+'  ___         ___ _
+  / _ \ /\  /\/ __(_)
+ / /_\// /_/ / /  | |      GHC Interactive, version 6.5.20060608, for Haskell 98.
+/ /_\\/ __  / /___| |      http://www.haskell.org/ghc/
+\____/\/ /_/\____/|_|      Type :? for help.
+
+Loading package base-1.0 ... linking ... done.
+Prelude> [1 of 2] Compiling QuickCheck       ( QuickCheck.hs, interpreted )
+[2 of 2] Compiling Main             ( primes.hs, interpreted )
+Ok, modules loaded: QuickCheck, Main.
+*Main> Loading package haskell98-1.0 ... linking ... done.
+prop_PrimesArePrime: Falsifiable, after 0 tests:
+5696
+*Main> Leaving GHCi.
+',
+ {:failure_count => 1, :success_count => 0, :test_count => 1,
+  :failures => [{:test => "prop_PrimesArePrime", :message => "Falsifiable, after 0 tests:\n5696"}]
+ }
+]
+  
+]

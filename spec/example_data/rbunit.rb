@@ -50,4 +50,28 @@ RuntimeError: What
                  :method => "test_truth"}]}
 ],
 
+["snarl_notifier is not available
+Loaded suite test/popup_notifier_test
+Started
+E
+Finished in 0.010711 seconds.
+
+  1) Error:
+test_growl(PopupNotifierTest):
+NoMethodError: undefined method `LoadError' for #<PopupNotifier:0x112210c>
+    ./test/../lib/popup_notifier.rb:10:in `initialize'
+    test/popup_notifier_test.rb:14:in `test_growl'
+    /opt/local/lib/ruby/gems/1.8/gems/mocha-0.5.1/lib/mocha/test_case_adapter.rb:19:in `run'
+
+1 tests, 0 assertions, 0 failures, 1 errors
+",
+ {:failure_count => 1, :success_count => 0, :test_count => 1,
+  :failures => [{:test => "test_growl(PopupNotifierTest)",
+                 :error_type => "NoMethodError",
+                 :message => "undefined method `LoadError' for #<PopupNotifier:0x112210c>",
+                 :file => "./test/../lib/popup_notifier.rb",
+                 :line => 10,
+                 :method => "initialize"}]}
+],
+
 ]
