@@ -7,8 +7,8 @@ module TestParser
   def self.parsers
     {:rspec => TestParser::RSpec,
      :pyunit => TestParser::PyUnit,
-     :junit4 => TestParser::JUnit4,
-     :rbunit => TestParser::RbUnit,
+#      :junit4 => TestParser::JUnit4,
+     :rubyunit => TestParser::RubyUnit,
      :quickCheck => TestParser::QuickCheck}
   end
 end

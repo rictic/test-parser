@@ -2,3 +2,11 @@
 
 * 1 major enhancement:
   * Initial release
+
+== 0.8.0 2007-08-01
+
+* 4 major enhancements:
+  * Support for rspec
+  * Support for rubyunit
+  * Support for pyunit
+  * Support for quickCheck

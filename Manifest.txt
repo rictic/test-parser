@@ -3,11 +3,12 @@ License.txt
 Manifest.txt
 README.txt
 Rakefile
+bin/test_parser
 lib/test-parser.rb
 lib/test-parser/version.rb
 lib/test-parser/parsers/pyunit.rb
 lib/test-parser/parsers/rspec.rb
-lib/test-parser/parsers/rbunit.rb
+lib/test-parser/parsers/rubyunit.rb
 lib/test-parser/parsers/junit4.rb
 lib/test-parser/parsers/quickCheck.rb
 lib/test-parser/parsers/base.rb
@@ -18,7 +19,7 @@ spec/test_parsers_spec.rb
 spec/example_data/pyunit.rb
 spec/example_data/rspec.rb
 spec/example_data/junit4.rb
-spec/example_data/rbunit.rb
+spec/example_data/rubyunit.rb
 spec/example_data/quickCheck.rb
 website/index.html
 website/index.txt

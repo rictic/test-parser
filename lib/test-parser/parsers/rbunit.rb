@@ -1,5 +1,5 @@
 module TestParser
-  class RbUnit < Base
+  class RubyUnit < Base
     def self.parse test_results
       test_info = Hash.new(0)
       test_info[:failures] = []

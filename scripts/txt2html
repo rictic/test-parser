@@ -41,7 +41,7 @@ else
   puts("Usage: #{File.split($0).last} source.txt [template.rhtml] > output.html")
   exit!
 end
-
+display_download = /index.txt/ === src
 template = ERB.new(File.open(template).read)
 
 title = nil
@@ -50,6 +50,7 @@ File.open(src) do |fsrc|
   title_text = fsrc.readline
   body_text = fsrc.read
   syntax_items = []
+  STDERR.puts "found" if /<(pre|code)[^>]*?syntax=['"]([^'"]+)[^>]*>(.*?)<\/>/m === body_text
   body_text.gsub!(%r!<(pre|code)[^>]*?syntax=['"]([^'"]+)[^>]*>(.*?)</>!m){
     ident = syntax_items.length
     element, syntax, source = $1, $2, $3

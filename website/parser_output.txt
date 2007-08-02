@@ -1,0 +1,31 @@
+h1. Output
+
+h2. Guarantees
+
+The output of the different parsers must vary to a certain degree.  Different testing systems produce varying levels of detail.  Some parsers may return more than the information displayed on this page, though as of version 0.8.0, none do.
+
+This page merely lists things you can be sure about.  This is essentially a retelling of what test-parser's own automated tests ensure. <a href='#note1' id='back1'>[1]</a>  Only the first property, <code>:failure_count</code> can be guaranteed.  If a parser can't determine the other properties, it may not provide them.  Partially implemented parsers also might only return some of these properties, but all parsers give a valid result for <code>:failure_count</code>.
+
+h2. :failure_count
+
+The most important property is <code>:failure_count</code>, which gives the number of tests that failed.  All parsers must yield this property.  A test which encounters an error in its operation is counted here.  If this property is missing, it's a good indication that there was a major problem.  Ensure that the correct parser is receiving the correct output.
+
+h2. :success_count and :test_count
+
+Two ancillary properties are <code>:success_count</code> and <code>:test_count</code>.  They represent the number of successful tests, and the total number of tests run.  If both of these properties are present, then <code>:success_count</code> + <code>:failure_count</code> must equal <code>:test_count</code>.
+
+h2. :failures
+
+The last property, <code>:failures</code> is an array of detailed information about the failed tests.  If present and nonempty, the length of <code>:failures</code> must equal <code>:failure_count</code>.  The following are details that may be found in an element of <code>:failures</code>:
+
+<table class='failure_details'>
+<tr><td><code>:test</code></td><td>the name of the test that failed</td></tr>
+<tr><td><code>:file</code></td><td>the filename where the test failed or the error was encountered</td></tr>
+<tr><td><code>:line</code></td><td>the line number where the test failed/error was encountered</td></tr>
+<tr><td><code>:method</code></td><td>the method/function/subroutine in which the failure occurred</td></tr>
+<tr><td><code>:message</code></td><td>a message giving more information about the failure</td></tr>
+<tr><td><code>:error_type</code></td><td>the class/type of the error encountered</td></tr>
+<tr><td><code>:line</code></td><td>the line number where the test failed/error was encountered</td></tr>
+</table>
+
+<a href='#back1' id='note1'>1)</a> The automated tests mere run against a list of examples and the known correct parsing of those examples.  If you find a test that doesn't parse correctly, please submit it to "the google group":http://groups.google.com/group/test-parser.
