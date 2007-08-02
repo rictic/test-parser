@@ -10,3 +10,8 @@
   * Support for rubyunit
   * Support for pyunit
   * Support for quickCheck
+  
+== 0.9.0
+
+* 1 major enhancement:
+  * Initial support for junit

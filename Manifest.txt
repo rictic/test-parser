@@ -15,7 +15,7 @@ lib/test-parser/parsers/base.rb
 scripts/txt2html
 setup.rb
 spec/spec_helper.rb
-spec/test_parsers_spec
+spec/test_parsers_spec.rb
 spec/example_data/pyunit
 spec/example_data/rspec
 spec/example_data/junit

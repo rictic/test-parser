@@ -4,7 +4,7 @@ module TestParser #:nodoc:
       0
     end
     def self.minor
-      8
+      9
     end
     def self.tiny
       0
