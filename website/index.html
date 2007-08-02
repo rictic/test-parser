@@ -7,8 +7,8 @@
   <title>
       test-parser
   </title>
+  <![if !IE]>
   <script src="javascripts/rounded_corners_lite.inc.js" type="text/javascript"></script>
-
   <script type="text/javascript">
     window.onload = function() {
       settings = {
@@ -24,6 +24,7 @@
       versionBox.applyCornersToAll();
     }
   </script>
+  <![endif]>
 </head>
 <body>
 <div id="main">
@@ -66,7 +67,7 @@
 	<p>Included is a script that will parse the output of a set of tests and print out a <a href="http://www.yaml.org/"><span class="caps">YAML</span></a> representation of the results.</p>
 
 
-	<p>Since we need a test suite to show this example on, we might as well test test-parser itself. <a href='#note1' id='back1'>[1]</a></p>
+	<p>Since we need a test suite to show this example on, we might as well test test-parser itself. <sup><a href='#note1' id='back1'>1</a></sup></p>
 
 
 <pre><code></code>
@@ -74,7 +75,7 @@
 [...]
 A    test-parser/README.txt
 A    test-parser/examples
-Checked out revision 9.
+Checked out revision 11.
 <span class='command'>&#126;&gt;&gt; cd test-parser</span>
 <span class='command'>&#126;/test-parser&gt;&gt; test_parser </span>
 usage: test_parser &lt;test_framework&gt;

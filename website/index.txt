@@ -22,7 +22,7 @@ h2. Demonstration of usage
 
 Included is a script that will parse the output of a set of tests and print out a "YAML":http://www.yaml.org/ representation of the results.
 
-Since we need a test suite to show this example on, we might as well test test-parser itself. <a href='#note1' id='back1'>[1]</a>
+Since we need a test suite to show this example on, we might as well test test-parser itself. <sup><a href='#note1' id='back1'>1</a></sup>
 
 
 <pre><code></code>
@@ -30,7 +30,7 @@ Since we need a test suite to show this example on, we might as well test test-p
 [...]
 A    test-parser/README.txt
 A    test-parser/examples
-Checked out revision 9.
+Checked out revision 11.
 <span class='command'>&#126;>> cd test-parser</span>
 <span class='command'>&#126;/test-parser>> test_parser </span>
 usage: test_parser &lt;test_framework&gt;

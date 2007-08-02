@@ -23,6 +23,7 @@ spec/example_data/rubyunit.rb
 spec/example_data/quickCheck.rb
 website/index.html
 website/index.txt
+website/parser_output.txt
 website/javascripts/rounded_corners_lite.inc.js
 website/stylesheets/screen.css
 website/template.rhtml

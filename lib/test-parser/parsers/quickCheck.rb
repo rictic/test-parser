@@ -11,13 +11,16 @@ module TestParser
       #   quickCheck doesn't give you much info on the command line, and
       #   every little bit helps
       
-      test_results.scan(/((.*?): )?OK, passed (\d+) tests./).each do |(_1,test,tests_passed,)|
+      #known bug: need to deal with the characters used to rewrite the number of tests written
+      #           i.e. the ascii control characters that quickCheck uses to increment the current number of tests ran
+      
+      test_results.scan(/((^\s*?): )?OK, passed (\d+) tests./).each do |(_1,test,tests_passed,)|
         test_info[:success_count] += 1
         test_info[:test_count] += 1
       end
       
       #this assumes that the counterexample can be shown on a single line
-      test_results.scan(/((.*?): )?(Falsifiable, after (\d+) tests:\n.*?)\n/) do |_1,test,message,successes|
+      test_results.scan(/(([^\s]*?): )?(Falsifiable, after (\d+) tests:\n.*?)\n/) do |_1,test,message,successes|
         test_info[:failure_count] += 1
         test_info[:test_count] += 1
         failure_info = {:message => message}

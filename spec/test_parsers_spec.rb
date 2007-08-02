@@ -65,10 +65,18 @@ TestParser.parsers.each_value do |parser|
 
             #find the relevent failure in the parsed_info by the filename/line number this may not work for some systems...
             
-            parsed_hash = parsed_info[:failures].find {|p_h| p_h[:file] == correct_hash[:file] && p_h[:line] == correct_hash[:line] }
+            parsed_hash = parsed_info[:failures].find {|p_h| 
+              if correct_hash[:test]
+                p_h[:test] == correct_hash[:test]
+              elsif correct_hash[:file] && correct_hash[:line]
+                p_h[:file] == correct_hash[:file] && p_h[:line] == correct_hash[:line] 
+              else
+                fail "Can't match up this error hash, not enough info: #{correct_hash.inspect}"
+              end
+            }
 
             if !parsed_hash
-              fail "didn't find the error in '#{correct_hash[:file]}' line #{correct_hash[:line]}"
+              fail "didn't find this error: #{correct_hash.inspect}"
             else
               #anything in the correct_info needs to match what was parsed
               #this enables the parsed data to include more info than we're testing for
@@ -81,8 +89,9 @@ TestParser.parsers.each_value do |parser|
       end
       
       #the number of detailed failure accounts should match the number of reported failures
-      it "should give the same number of failure details as there were failures" do
+      it "should give the same number of failure details as there were failures, when :failures is nonempty" do
         examples.each do |test_results, correct_info, parsed_info|
+          next if (parsed_info[:failures].empty?)
           parsed_info[:failures].length.should == parsed_info[:failure_count]          
         end
       end
