@@ -1,5 +1,5 @@
 module TestParser
-  class JUnit4 < Base
+  class JUnit < Base
     def self.parse test_results
       test_info = Hash.new(0)
       test_info[:failures] = []

@@ -19,7 +19,7 @@ end
 TestParser.parsers.each_value do |parser|
 
   begin
-    data_filename = File.dirname(__FILE__) + "/example_data/" + parser.name.downcase.sub("testparser::","") + ".rb"
+    data_filename = File.dirname(__FILE__) + "/example_data/" + parser.name.downcase.sub("testparser::","")
     examples = eval(File.read(data_filename))
   rescue Exception => err
     STDERR.puts "Syntax error in #{data_filename}:\n\n"
