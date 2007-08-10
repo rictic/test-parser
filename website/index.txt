@@ -30,7 +30,7 @@ Since we need a test suite to show this example on, we might as well test test-p
 [...]
 A    test-parser/README.txt
 A    test-parser/examples
-Checked out revision 11.
+Checked out revision 14.
 <span class='command'>&#126;>> cd test-parser</span>
 <span class='command'>&#126;/test-parser>> test_parser </span>
 usage: test_parser &lt;test_framework&gt;
@@ -41,14 +41,14 @@ usage: test_parser &lt;test_framework&gt;
      quickCheck
 <span class='command'>&#126;/test_parser>> spec spec/test_parsers_spec.rb | test_parser rspec</span>
 --- 
-:success_count: 22
+:success_count: 28
 :failures: []
 
 :failure_count: 0
-:test_count: 22
+:test_count: 28
 </pre>
 
-And thus you can see that test-parser has 22 tests, and all of them pass successfully.  More importantly, you could use YAML to get easy access to this information with another program in your toolchain.
+And thus you can see that test-parser has 28 tests, and all of them pass successfully.<sup><a href='#note2' id='back2'>2</a></sup>  More importantly, you could use YAML to get easy access to this information with another program in your toolchain.
 
 You could do something equivalent in Ruby with something like the following:
 
@@ -68,7 +68,7 @@ You could do something equivalent in Ruby with something like the following:
 
 
 
-<a href='#back1' id='note1'>1)</a> requires rspec, easily installed via <code>sudo gem install rspec</code>
+
 
 h2. More Information
 
@@ -96,3 +96,9 @@ This code is free to use under the terms of "the MIT license":http://www.opensou
 h2. Contact
 
 Comments are welcome. Send an email to "Peter Burns":mailto:rictic@gmail.com.
+
+<div class='footnotes'>
+<a href='#back1' id='note1'>1)</a> requires rspec, easily installed via <code>sudo gem install rspec</code>
+
+<a href='#back2' id='note2'>2)</a> This, you may notice, is more than the 22 tests in 0.8.0.  This reflects the additional tests for the preliminary "junit":http://junit.sourceforge.net/ support that's coming in 0.9.0.  Shhh!
+</div>

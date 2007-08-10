@@ -42,6 +42,9 @@ The following are details that may be found in an element of <code>:failures</co
 <tr><td><code>:line</code></td><td>the line number where the test failed/error was encountered</td></tr>
 </table>
 
+
+<div class='footnotes'>
 <a href='#back1' id='note1'>1)</a> The automated tests merely run against a list of examples and the known correct parsing of those examples.  If you find a test that doesn't parse correctly, please submit it to "the google group":http://groups.google.com/group/test-parser.
 
 <a href='#back2' id='note2'>2)</a> Or hashes, or hashmaps, as you prefer
+</div>

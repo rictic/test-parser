@@ -9,6 +9,7 @@ module TestParser
      :pyunit => TestParser::PyUnit,
      :junit => TestParser::JUnit,
      :rubyunit => TestParser::RubyUnit,
-     :quickCheck => TestParser::QuickCheck}
+     :quickCheck => TestParser::QuickCheck,
+     :cutest => TestParser::CuTest}
   end
 end

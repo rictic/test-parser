@@ -1,0 +1,36 @@
+[
+
+
+["There were 2 failures:
+1) TestSimple: list.c:8: expected <1> but was <2>
+2) TestSimply: list.c:12: expected <1> but was <3>
+
+!!!FAILURES!!!
+Runs: 2 Passes: 0 Fails: 2
+",
+ {:failure_count => 2, :success_count => 0, :test_count => 2,
+  :failures => [{:test => "TestSimple",
+                 :file => "list.c",
+                 :line => 8,
+                 :message => "expected <1> but was <2>"},
+                {:test => "TestSimply",
+                 :file => "list.c",
+                 :line => 12,
+                 :message => "expected <1> but was <3>"}
+               ]
+ }
+],
+
+["..
+
+OK (2 tests)
+
+",
+ {:failure_count => 0, :success_count => 2, :test_count => 2,
+  :failures => []}
+
+]
+
+
+
+]

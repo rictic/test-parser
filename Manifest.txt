@@ -12,6 +12,7 @@ lib/test-parser/parsers/rubyunit.rb
 lib/test-parser/parsers/junit.rb
 lib/test-parser/parsers/quickCheck.rb
 lib/test-parser/parsers/base.rb
+lib/test-parser/parsers/cutest.rb
 scripts/txt2html
 setup.rb
 spec/spec_helper.rb
@@ -21,6 +22,7 @@ spec/example_data/rspec
 spec/example_data/junit
 spec/example_data/rubyunit
 spec/example_data/quickCheck
+spec/example_data/cutest
 website/index.html
 website/index.txt
 website/parser_output.txt

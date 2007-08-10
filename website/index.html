@@ -33,7 +33,7 @@
     
         <div id="version" class="clickable" onclick='document.location = "http://rubyforge.org/projects/test-parser"; return false'>
           <p>Get Version</p>
-          <a href="http://rubyforge.org/projects/test-parser" class="numbers">0.9.0</a>
+          <a href="http://rubyforge.org/projects/test-parser" class="numbers">0.8.0</a>
         </div>
     
     <h2>Overview</h2>
@@ -75,7 +75,7 @@
 [...]
 A    test-parser/README.txt
 A    test-parser/examples
-Checked out revision 11.
+Checked out revision 14.
 <span class='command'>&#126;&gt;&gt; cd test-parser</span>
 <span class='command'>&#126;/test-parser&gt;&gt; test_parser </span>
 usage: test_parser &lt;test_framework&gt;
@@ -86,14 +86,14 @@ usage: test_parser &lt;test_framework&gt;
      quickCheck
 <span class='command'>&#126;/test_parser&gt;&gt; spec spec/test_parsers_spec.rb | test_parser rspec</span>
 <del>-</del> 
-:success_count: 22
+:success_count: 28
 :failures: []
 
 :failure_count: 0
-:test_count: 22
+:test_count: 28
 </pre>
 
-	<p>And thus you can see that test-parser has 22 tests, and all of them pass successfully.  More importantly, you could use <span class="caps">YAML</span> to get easy access to this information with another program in your toolchain.</p>
+	<p>And thus you can see that test-parser has 28 tests, and all of them pass successfully.<sup><a href='#note2' id='back2'>2</a></sup>  More importantly, you could use <span class="caps">YAML</span> to get easy access to this information with another program in your toolchain.</p>
 
 
 	<p>You could do something equivalent in Ruby with something like the following:</p>
@@ -106,9 +106,6 @@ usage: test_parser &lt;test_framework&gt;
 <span class="ident">parsed_test</span><span class="punct">.</span><span class="ident">inspect</span> <span class="comment">#==&gt; {:test_count=&gt;22, :success_count=&gt;22, :failures=&gt;[], :failure_count=&gt;0}</span>
 
 </pre>
-
-	<p><a href='#back1' id='note1'>1)</a> requires rspec, easily installed via <code>sudo gem install rspec</code></p>
-
 
 	<h2>More Information</h2>
 
@@ -147,6 +144,13 @@ usage: test_parser &lt;test_framework&gt;
 
 
 	<p>Comments are welcome. Send an email to <a href="mailto:rictic@gmail.com">Peter Burns</a>.</p>
+
+
+<div class='footnotes'>
+<a href='#back1' id='note1'>1)</a> requires rspec, easily installed via <code>sudo gem install rspec</code>
+
+	<p><a href='#back2' id='note2'>2)</a> This, you may notice, is more than the 22 tests in 0.8.0.  This reflects the additional tests for the preliminary <a href="http://junit.sourceforge.net/">junit</a> support that&#8217;s coming in 0.9.0.  Shhh!
+</div></p>
     <p class="coda">
       <a href="mailto:drnicwilliams@gmail.com">Dr Nic</a><br/>
       Theme extended from <a href="http://rb2js.rubyforge.org/">Paul Battley</a>
