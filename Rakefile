@@ -80,7 +80,9 @@ hoe = Hoe.new(GEM_NAME, VERS) do |p|
   
   # == Optional
   p.changes = p.paragraphs_of("History.txt", 0..1).join("\n\n")
-  #p.extra_deps = []     # An array of rubygem dependencies [name, version], e.g. [ ['active_support', '>= 1.3.1'] ]
+  p.extra_deps = [["rake", '>= 0.7.3'],]
+               # An array of rubygem dependencies [name, version], e.g. [ ['active_support', '>= 1.3.1'] ]
+  
   #p.spec_extras = {}    # A hash of extra values to set in the gemspec.
 end
 
@@ -129,14 +131,16 @@ task :check_version do
   end
 end
 
+
 desc "Run the specs under spec/models"
 Spec::Rake::SpecTask.new do |t|
-  t.spec_opts = ['--options', "spec/spec.opts"]
   t.spec_files = FileList['spec/*_spec.rb']
 end
 
 desc "Default task is to run specs"
 task :default => :spec
+
+
 
 desc "Uninstall the current version of the library"
 task :uninstall do
@@ -145,3 +149,8 @@ end
 
 desc "Uninstall the current version and deploy locally again"
 task :reinstall => [:uninstall, :local_deploy]
+
+desc "Begin continuous testing"
+task :gtest do
+  sh "gtest -t rspec -c 'rake spec'"
+end

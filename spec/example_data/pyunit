@@ -139,5 +139,64 @@ FAILED (failures=1, errors=1)",
        }
        ]
    }
-  ]
+  ],
+  [".......F...
+======================================================================
+FAIL: A SearchBuffer's removal count should be accurate
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File \"test_searchBuffers.py\", line 32, in testCountRemovals
+    countRemovalsTest(self,SearchBuffer())
+  File \"test_searchBuffers.py\", line 16, in countRemovalsTest
+    self.assertFalse(sbuffer.isEmpty())
+AssertionError
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.002s
+
+FAILED (failures=1)
+5
+4
+6
+3
+7
+2
+8
+1
+9
+10
+rake aborted!
+Command failed with status (1): [python test*.py...]
+/Users/peter/Documents/Class Notes/2007f/AI/projects/assignment2/rakefile:4
+(See full trace by running task with --trace)
+",
+  {:failure_count => 1, :success_count => 10}],
+ ["A PriorityQueue's insertion count should be accurate ... ok
+A PriorityQueue's removal count should be accurate ... ok
+A PriorityQueue should sort its values according to the given heuristic. ... FAIL
+A Queue's insertion count should be accurate ... ok
+A Queue's removal count should be accurate ... ok
+A Queue should behave in a FIFO manner. ... ok
+A Stack's insertion count should be accurate ... ok
+A Stack's removal count should be accurate ... ok
+A Stack should behave in a LIFO manner. ... ok
+
+======================================================================
+FAIL: A PriorityQueue should sort its values according to the given heuristic.
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File \"test_searchBuffers.py\", line 71, in testSorting
+    self.assertTrue( not pq.heuristic)
+AssertionError
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+FAILED (failures=1)
+rake aborted!
+Command failed with status (1): [python test_searchBuffers.py --verbose...]
+/Users/peter/Documents/Class Notes/2007f/AI/projects/assignment2/rakefile:5
+(See full trace by running task with --trace)",
+  {:failure_count => 1, :success_count => 8}
+],
 ]

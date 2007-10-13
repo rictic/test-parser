@@ -10,7 +10,7 @@ module TestParser
         test_info[:failure_count] += failure_count.to_i
       end
       
-      test_results.scan(/OK \((\d+) tests\)/).each do |(success_count,)|
+      test_results.scan(/OK \((\d+) tests?\)/).each do |(success_count,)|
         test_info[:failure_count] = 0 if !test_info.has_key?(:failure_count)
         test_info[:success_count] += success_count.to_i
         test_info[:test_count] += success_count.to_i

@@ -269,5 +269,25 @@ BUILD FAILED
 Total time: 7 minutes 15 seconds",
   {:failure_count => 2, :success_count => 695, :test_count => 697,
    :failures => [{:test => "org.antlr.test.TestRewriteAST"}, {:test => "org.antlr.test.TestSemanticPredicates"}]}
-  ]
+  ],
+[".F
+Time: 0.002
+There was 1 failure:
+1) testParseInteger(TestEval)junit.framework.AssertionFailedError: expected:<1> but was:<2>
+        at TestEval.testParseInteger(TestEval.java:6)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+        at TestEvalSuite.main(TestEvalSuite.java:18)
+
+FAILURES!!!
+Tests run: 1,  Failures: 1,  Errors: 0
+",
+ {:failure_count => 1, :success_count => 0, :test_count => 1,
+  :failures => [{:message => "expected:<1> but was:<2>",
+                 :test => "testParseInteger(TestEval)",
+                 :error_type => "junit.framework.AssertionFailedError",
+                 :file => "TestEval.java",
+                 :line => 6}]}
+ ],
 ]

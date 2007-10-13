@@ -29,8 +29,15 @@ OK (2 tests)
  {:failure_count => 0, :success_count => 2, :test_count => 2,
   :failures => []}
 
+],
+
+[".
+
+OK (1 test)
+
+",
+ {:failure_count => 0, :success_count => 1, :test_count => 1,
+  :failures => []}
 ]
-
-
 
 ]

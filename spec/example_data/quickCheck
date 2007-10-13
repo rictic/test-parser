@@ -57,5 +57,23 @@ prop_PrimesArePrime: OK, passed 100 tests.
   :failures => [{:test => "prop_PrimesAreOdd", :message => "Falsifiable, after 65 tests:\n2"}]}
 ],
 
+# ["   ___         ___ _
+#   / _ \\ /\\  /\\/ __(_)
+#  / /_\\// /_/ / /  | |      GHC Interactive, version 6.5.20060608, for Haskell 98.
+# / /_\\\\/ __  / /___| |      http://www.haskell.org/ghc/
+# \\____/\\/ /_/\\____/|_|      Type :? for help.
+# 
+# Loading package base-1.0 ... linking ... done.
+# Prelude> [1 of 2] Compiling QuickCheck       ( QuickCheck.hs, interpreted )
+# [2 of 2] Compiling CoreParser       ( core_parser.hs, interpreted )
+# Ok, modules loaded: QuickCheck, CoreParser.
+# *CoreParser> Loading package haskell98-1.0 ... linking ... done.
+# Loading package parsec-2.0 ... linking ... done.
+# prop_trivial: OK, passed 100 tests.
+# *CoreParser> prop_parse_number: OK, passed 100 tests.
+# *CoreParser> Leaving GHCi.
+# ",
+#  {:failure_count => 1, :success_count => 1, :test_count => 2}
+# ],
 
 ]

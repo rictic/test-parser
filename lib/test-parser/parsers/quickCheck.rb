@@ -14,7 +14,7 @@ module TestParser
       #known bug: need to deal with the characters used to rewrite the number of tests written
       #           i.e. the ascii control characters that quickCheck uses to increment the current number of tests ran
       
-      test_results.scan(/((^\s*?): )?OK, passed (\d+) tests./).each do |(_1,test,tests_passed,)|
+      test_results.scan(/((\w*?): )?OK, passed (\d+) tests./).each do |(_1,test,tests_passed,)|
         test_info[:success_count] += 1
         test_info[:test_count] += 1
       end
