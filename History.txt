@@ -15,3 +15,8 @@
 
 * 1 major enhancement:
   * Initial support for junit
+
+== 0.11.0
+
+* 1 major enhancement:
+  * Initial support for cutest
